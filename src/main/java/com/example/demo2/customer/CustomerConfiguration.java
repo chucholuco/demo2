@@ -1,5 +1,6 @@
 package com.example.demo2.customer;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -21,6 +22,6 @@ public class CustomerConfiguration {
     @Bean
     CustomerRepo customerRepo(){
         System.out.println("useFakeCustomerRepo = " + useFakeCustomerRepo);
-        return useFakeCustomerRepo ? new CustomerFakeRepository() : new CustomerRepository();
+        return new CustomerFakeRepository();
     }
 }
